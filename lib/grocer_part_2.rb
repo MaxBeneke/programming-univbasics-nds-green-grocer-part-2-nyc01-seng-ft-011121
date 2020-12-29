@@ -72,8 +72,14 @@ def checkout(cart, coupons)
  couponed_cart = apply_coupons(clean_cart)
  clearanced_cart = apply_clearance(couponed_cart)
  
+ total = 0
  clearanced_cart.each do |cart_item|
-   if cart_item[:clearance] == true
-     cart_item[:]
+   total += (cart_item[:count] * cart_item[:price])
+ end
  
+ if total > 100
+   total *= 0.90
+ end
+ 
+ total.round(2)
 end
