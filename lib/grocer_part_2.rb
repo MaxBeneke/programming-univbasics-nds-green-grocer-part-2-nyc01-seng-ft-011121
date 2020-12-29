@@ -67,5 +67,13 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
+  
  clean_cart = consolidate_cart(cart)
+ couponed_cart = apply_coupons(clean_cart)
+ clearanced_cart = apply_clearance(couponed_cart)
+ 
+ clearanced_cart.each do |cart_item|
+   if cart_item[:clearance] == true
+     cart_item[:]
+ 
 end
