@@ -20,7 +20,6 @@ updated_cart = []
         updated_cart.push(with_coupon_hash)
         cart_item[:count] -= coupon_item[:num]
         nil_checker = false
-        binding.pry
       end
       ### APPLY coupon if they have extra items
      
