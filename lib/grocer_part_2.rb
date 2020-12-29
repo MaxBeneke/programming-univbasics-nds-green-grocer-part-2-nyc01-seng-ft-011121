@@ -70,12 +70,12 @@ def checkout(cart, coupons)
  clean_cart = consolidate_cart(cart)
  couponed_cart = apply_coupons(clean_cart)
  clearanced_cart = apply_clearance(couponed_cart)
- binding.pry
+ 
  total = 0
  clearanced_cart.each do |cart_item|
    total += (cart_item[:count] * cart_item[:price])
  end
- 
+ binding.pry
  if total > 100
    total *= 0.90
  end
